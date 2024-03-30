@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/vendor/js/beefup/dist/css/docs/styles.css">
+    <link rel="stylesheet" href="assets/vendor/js/beefup/dist/css/jquery.beefup.css">
+
+
+    <title>Document</title>
+    <style>
+        .ali {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            background-color: lightgray;
+            height: 500px;
+            padding: 20px;
+        }
+        .ali div {
+            width: 20%;
+            height: 300px;
+            background-color: lightgreen;
+
+        }    </style>
+</head>
+
+<body>
+    <main>
+        <div class="ali">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <article class="beefup example">
+            <h4 class="beefup__head">
+                iran rate
+            </h4>
+
+            <div class="beefup__body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto molestias, quaerat ipsam
+                    reprehenderit accusamus eos culpa perferendis nostrum eaque? Dicta, exercitationem? Corrupti soluta
+                    alias dolor, modi molestiae dolore repudiandae iure.</p>
+            </div>
+        </article>
+    </main>
+    <script src="assets/vendor/js/jquery-3.7.1.js"></script>
+    <script src="assets/vendor/js/beefup/src/js/jquery.beefup.js"></script>
+    <script>
+        $(function () {
+
+            // Default
+            $('.example').beefup();
+
+            // Open single
+            $('.example-opensingle').beefup({
+                openSingle: true,
+                stayOpen: 'last'
+            });
+
+            // Fade animation
+            $('.example-fade').beefup({
+                animation: 'fade',
+                openSpeed: 400,
+                closeSpeed: 400
+            });
+
+            // Scroll
+            $('.example-scroll').beefup({
+                scroll: true,
+                scrollOffset: -10
+            });
+
+            // Self block
+            $('.example-selfblock').beefup({
+                selfBlock: true
+            });
+
+            // Self close
+            $('.example-selfclose').beefup({
+                selfClose: true
+            });
+
+            // Breakpoints
+            $('.example-breakpoints').beefup({
+                scroll: true,
+                scrollOffset: -10,
+                breakpoints: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            animation: 'fade',
+                            scroll: false
+                        }
+                    },
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            animation: 'slide',
+                            openSpeed: 800,
+                            openSingle: true
+                        }
+                    }
+                ]
+            });
+
+            // API Methods
+            var $beefup = $('.example-api').beefup();
+            $beefup.open($('#beefup'));
+
+            // Callback
+            $('.example-callbacks').beefup({
+                onInit: function ($el) {
+                    $el.css('border-color', 'blue');
+                },
+                onOpen: function ($el) {
+                    $el.css('border-color', 'green');
+                },
+                onClose: function ($el) {
+                    $el.css('border-color', 'red');
+                }
+            });
+
+            // Use HTML5 data attributes
+            $('.example-data').beefup();
+
+            // Tabs
+            $('.tab__item').beefup({
+                animation: '',
+                openSingle: true,
+                openSpeed: 0,
+                closeSpeed: 0,
+                onOpen: function ($el) {
+                    // Add active class to tabs
+                    $('a[href="#' + $el.attr('id') + '"]').parent().addClass(this.openClass)
+                        .siblings().removeClass(this.openClass);
+                }
+            });
+
+            // Dropdown
+            var $dropdown = $('.dropdown').beefup({
+                animation: 'fade',
+                openSingle: true,
+                selfClose: true
+            });
+
+            // Close dropdown
+            $('.dropdown').on('click', 'li', function () {
+                $dropdown.close();
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d1 {
+            width: 200px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="hide" id="btn1">
+    <input type="button" value="show" id="btn2">
+    <input type="button" value="toggle" id="btn3">
+    <input type="button" value="slide up" id="btn4">
+    <input type="button" value="slide down" id="btn5">
+    <input type="button" value="slide toggle" id="btn6">
+    <input type="button" value="fadein" id="btn7">
+    <input type="button" value="fade out" id="btn8">
+    <input type="button" value="fadetoggle" id="btn9">
+    <input type="button" value="css1" id="btn10">
+    <input type="button" value="css2" id="btn11">
+    <br>
+    <span class="menu">open menu</span>
+    <br>
+    <div class="d1"></div>
+    <script src="../assets/js/jquery-3.7.1.js"></script>
+    <script>
+$(document).ready(function () {
+    $("#btn1").click(function () {
+        $(".d1").hide(2000) })
+    })
+    $(document).ready(function () {
+        $("#btn2").click(function () {
+            $(".d1").show(2000)
+
+        })
+    })
+    $(document).ready(function(){
+        $("#btn3").click(function (){
+            $(".d1").toggle(2000)
+        })
+    })
+    $(document).ready(function () {
+        $(".menu").hover(function () {
+            $(".d1").show(2000)
+        })
+    })
+    $(document).ready(function (){
+        $("#btn4").click(function (){
+            $(".d1").slideUp(2000)
+        })
+    })
+    $(document).ready(function(){
+        $("#btn5").click(function(){
+            $(".d1").slideDown (2000)
+        })
+    })
+    $(document).ready(function(){
+        $("#btn6").click(function(){
+            $(".d1").slideToggle(2000)
+        })
+    })
+    $(document).ready(function()
+    {
+        ("#btn7").click(function(){
+            (".d1").fadein(2000)
+        })
+    })
+    $(document).ready(function(){
+        ("#btn8").click(function(){
+            (".d1").fadeout(2000)
+        })
+    })
+    $("#btn10").click(function(){
+        $(".d1").css ("background-color" , "white")
+        $(".d1").css ("color" , "white")
+        $(".d1").css ("border" , "3px solid red")
+
+    })
+    $("#btn11").click(function(){
+        $(".d1").css ({"background-color": "blue" , "color": "white" , "border" : "3px solid"})
+    })
+
+
+    </script>
+</body>
+</html>

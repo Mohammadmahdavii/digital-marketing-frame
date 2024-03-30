@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../js/nav/dist/css/sm-core-css.css">
+    <link rel="stylesheet" href="../js/nav/dist/css/sm-blue/sm-blue.css">
+    <link rel="stylesheet" href="../js/nav/dist/css/sm-clean/sm-clean.css">
+    <link rel="stylesheet" href="../js/nav/dist/css/sm-mint/sm-mint.css">
+    <link rel="stylesheet" href="../js/nav/dist/css/sm-simple/sm-simple.css">
+    
+   
+    <title>Document</title>
+</head>
+<body>
+    <ul id="main-menu" class="sm sm-mint">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a>
+        <ul>
+          <li><a href="#">Introduction to SmartMenus jQuery</a></li>
+          <li><a href="#">Themes</a></li>
+          <li><a href="#">The author</a></li>
+          <li><a href="#">The company</a>
+        </ul>
+        <ul>
+          <li><a href="#">About Vadikom</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Old SmartMenus versions</a></li>
+      
+      </ul>
+    <!-- Core -->
+    <script src="../js/jquery-3.7.1.js"></script>
+<script src="../../vendor/js/nav/dist/jquery.smartmenus.js"></script>
+<script>
+    $(function() {
+  $('#main-menu').smartmenus({
+    // options here
+  });
+});
+</script>
+
+</body>
+</html>
